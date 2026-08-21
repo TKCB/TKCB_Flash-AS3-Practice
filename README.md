@@ -57,6 +57,14 @@
 　 · ……更多内容，自行探索……
 
 
+# The Flash 闪侠 - 11RIA 闪客社区
+除了这些练习，其实我也搭建了一个分享Flash技术资料的网站。
+
+网址：http://www.theflash.cc/
+
+中国 Flash 技术最后的坚守者——带你认识 Flash，并找到重点学习内容和路径，还有官方文档、资料、书籍、视频教程和我们的小练习（超赞）……
+
+
 # 关于我
 E-mail：tkcb@qq.com
 
@@ -66,4 +74,4 @@ Q　Q：2414268040（TKCB-Nm）
 
 QQ群：96759336（The Flash，始于2011年）
 
-Flash 闪侠：www.theflash.cc
+Flash 闪侠：[www.theflash.cc](http://www.theflash.cc)
