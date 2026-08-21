@@ -1,0 +1,31 @@
+AS3中混合名称			名称		AS3中实际字符串名称
+默认（不混合）
+BlendMode.NORMAL		一般		normal
+
+
+去暗组（去暗，留亮）
+BlendMode.LIGHTEN		变亮		lighten
+BlendMode.SCREEN		滤色		screen
+BlendMode.ADD			添加		add
+
+
+去亮组（去亮，留暗）
+BlendMode.DARKEN		变暗		darken
+BlendMode.MULTIPLY		正片叠底	multiply
+
+
+对比组（上下叠加，去掉中性灰，亮处更亮，暗处更暗）
+BlendMode.OVERLAY		叠加		overlay
+BlendMode.HARDLIGHT		强光		hardlight
+
+
+反色组（颜色取反）
+BlendMode.SUBTRACT		减去		subtract
+BlendMode.DIFFERENCE	差值		difference
+BlendMode.INVERT		反相		invert
+
+
+其他组
+BlendMode.ALPHA			Alpha		alpha
+BlendMode.ERASE			擦除		erase
+BlendMode.LAYER			图层		layer
