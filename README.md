@@ -51,7 +51,17 @@
 　 · 二维码
   
 　 · 各种答题
-  
+
 　 · AIR（独有扩展功能）
   
 　 · ……更多内容，自行探索……
+
+
+#关于我
+E-mail：tkcb@qq.com
+我的小站：nm.tkcb.cc
+Q　Q：2414268040（TKCB-Nm）
+QQ群：96759336（The Flash，始于2011年）
+Flash 闪侠：www.theflash.cc
+// 11RIA 闪客社区：www.11ria.com
+  
