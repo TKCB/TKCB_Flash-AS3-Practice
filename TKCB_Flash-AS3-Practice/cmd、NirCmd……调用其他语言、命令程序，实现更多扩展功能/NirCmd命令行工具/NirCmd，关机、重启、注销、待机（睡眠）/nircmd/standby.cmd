@@ -1,0 +1,2 @@
+nircmd.exe standby
+exit

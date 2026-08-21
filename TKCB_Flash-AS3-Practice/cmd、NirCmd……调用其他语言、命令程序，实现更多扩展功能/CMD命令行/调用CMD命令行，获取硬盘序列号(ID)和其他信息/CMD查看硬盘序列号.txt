@@ -1,0 +1,15 @@
+使用diskpart命令
+
+Win+R键运行cmd，进入命令行界面：
+
+1.diskpart
+
+2.list disk 查看有几块硬盘
+
+3.select disk 0 选择第一块硬盘
+
+4.detail disk 显示选择的硬盘详细信息
+
+显示的第一行是硬盘型号，第二行ID是序列号。
+
+5.若有多块硬盘，返回第3步继续下面操作。

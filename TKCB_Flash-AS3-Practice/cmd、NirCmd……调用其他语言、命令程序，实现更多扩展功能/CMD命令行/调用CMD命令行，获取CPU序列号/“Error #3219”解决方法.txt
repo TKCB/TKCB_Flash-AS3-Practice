@@ -1,0 +1,10 @@
+AIR如何启动调用本地exe可执行文件出现Error: Error #3219: The NativeProcess could not be started. 'Not supported in current profile.'的错误
+
+
+要使程序运行成功要在“文件名-app.xml”这个文件中的最后一行
+
+</application>
+
+前面加上
+
+<supportedProfiles>extendedDesktop</supportedProfiles>

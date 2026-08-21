@@ -1,0 +1,1 @@
+nircmd.exe win close class "CabinetWClass"

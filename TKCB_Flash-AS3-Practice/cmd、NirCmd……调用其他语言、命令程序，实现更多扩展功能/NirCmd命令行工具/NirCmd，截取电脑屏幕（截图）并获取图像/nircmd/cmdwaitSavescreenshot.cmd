@@ -1,0 +1,1 @@
+nircmd.exe cmdwait 0 savescreenshot "~$folder.nircmd$\shot.png"

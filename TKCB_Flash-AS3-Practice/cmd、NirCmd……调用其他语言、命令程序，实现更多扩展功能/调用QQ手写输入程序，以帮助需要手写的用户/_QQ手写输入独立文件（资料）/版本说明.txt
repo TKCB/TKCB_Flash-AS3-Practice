@@ -1,0 +1,8 @@
+v4.0
+QQPYHandInput.exe大家比较常用的版本
+
+v5.1.2025.400
+QQPYHandInput.exe文件图标换了新版的，并且开始需要登录QQ了
+
+v6.0.5015.400
+增加了一个必须的文件：QQPYHandInputEngine.dll
