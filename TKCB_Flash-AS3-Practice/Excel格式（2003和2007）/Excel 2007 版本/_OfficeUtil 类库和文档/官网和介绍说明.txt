@@ -1,0 +1,44 @@
+﻿破晓 / OfficeUtil
+
+
+开源地址：
+AIR论坛：http://www.airmyth.com/forum-52-1.html
+码云：https://gitee.com/airmyth/OfficeUtil
+Github：https://github.com/anygo/OfficeUtil
+
+总结贴：
+http://www.airmyth.com/thread-2-1-1.html
+
+欢迎访问我的小站：
+www.airmyth.com （AIR ANE FlasCC）
+
+
+开发语言：AS3
+
+
+项目内容：
+目前功能：
+仅能读取Excel 2007 及以上版本
+按行读取
+按列读取
+添加行，列，单元格，二维表数据
+读取单元格文本
+单元格赋值
+读取合并单元格文本
+解析文件基础属性
+创建Excel空文档
+导出Excel
+修改Sheet页名称
+
+
+移动设备上也能用哦
+
+
+待完善部分：
+Excel 读取图片，函数等复杂元素
+读取Word ppt
+导出功能
+
+
+本例旨在抛砖引玉，望读者完善
+QQ群：272732356

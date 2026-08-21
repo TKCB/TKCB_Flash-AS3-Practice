@@ -1,0 +1,20 @@
+as3xls 类库版本 as3xlsUTF8（某个网友修改，说是完美支持中文和日期（导入读取），导出说是暂时还不够好）
+
+mx 类库版本3.6（Flex SDK 3.6）
+
+mx 类库剔除了部分不需要的类，以减少源文件体积，剔除文件夹如下：
+accessibility
+automation
+containers
+controls
+effects
+graphics
+logging
+messaging
+preloaders
+printing
+skins
+states
+styles
+validators
+readme.txt
