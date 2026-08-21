@@ -1,0 +1,18 @@
+﻿{
+	"name":"中国",
+	"province":
+	[{
+		"name":"黑龙江",
+		"number":1275,
+		"isImportant":false,
+		"nickname":null,
+		"cities":["哈尔滨","大庆"]
+	},
+	{
+		"name":"广东",
+		"number":1567,
+		"isImportant":false,
+		"nickname":"妖都",
+		"cities":["广州","深圳","珠海"]
+	}]
+}

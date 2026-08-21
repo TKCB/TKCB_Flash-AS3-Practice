@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="TKCB-Nm（TKCB乐队队长）">
+	
+	
+	<title>我是一个被嵌入AIR内的H5页面</title>
+	
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	
+	<style type="text/css">
+		body {
+			background-color : #DDDDDD;
+		}
+		.explain {
+			color : #666666;
+		}		.title {
+			color : #000000;
+		}
+		.tf {
+			color : #000000;
+		}
+		.tip {
+			color : #FF0000;
+		}
+		  #testTF {
+			width: 360px;
+		  }
+		  #tf1 {
+			line-height: 30px;
+			white-space: nowrap;
+		  }
+	</style>
+</head>
+
+<body>
+	<p class="explain"></p>
+	
+	<h2 class="title">我是一个被嵌入AIR内的H5页面</h2>
+	
+	<br/>
+	<input id="testTF" type="text" value="我是一串数据，可以是json的字符串形式"/>　　
+	<button id="btn1" class="btn" type="button">给AIR发送消息</button>
+	<br/>
+	
+	<p id="tf1" class="tf">　</p>
+	<br/>
+	
+	<script type="text/javascript">
+		// 当前URL
+		var currentUrl = document.location.pathname;
+		
+		// 文档初始化
+		$( document ).ready( init2 );
+		function init2 ()
+		{
+			// 给AIR发送消息
+			$( "#btn1" ).bind( "click", function ( eve )
+			{
+				// 我是用这种方法发不过去数据，故而改为了“document.location”形式
+				//window.chrome.webview.postMessage( $("#testTF").val(), "*" );
+				//window.chrome.webview.postMessage( "123456", "*" );
+				
+				// 由于传递后因为路径改变网页会立刻丢失，故而瞬间再切换回去
+				// 【__-_-_-_-_-_-__】是我自定义的路径分隔符
+				document.location.pathname = currentUrl + '__-_-_-_-_-_-__' + '{"StageWebView2":"' + $("#testTF").val() +'"}';
+				document.location.pathname = currentUrl;
+			});
+			
+			// 接受AIR发来的数据
+			window.airMessage = airMessage;
+			function airMessage ( data )
+			{
+				$( "#tf1" ).text( "接收来自AIR的数据：" + JSON.stringify(data) );
+			}
+		}
+	</script>
+	
+	
+	<!-- 下面代码只是用来给网页添加点其他元素，模拟较为真实的网页，和本小练习没有任何关系 -->
+	<canvas id="canvas" style="background:#000;" width="500" height="200"></canvas>
+	<script>
+		// 画布对象
+		var ctx = $( "#canvas" )[ 0 ].getContext( "2d" );
+	
+		// 舞台的宽度和高度
+		var stageWidth = 500;
+		var stageHeight = 200;
+		
+		// 随机文字数组
+		var words = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJHJKLZXCVBBNMがガぎギぐグげゲごゴきゃキャきゅキュきょキョりゃリャゅリュりょリョ";
+		var words = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJHJKLZXCVBBNM";
+		var wordsArr = words.split( '' );
+		
+		// 文字颜色	
+		var wordColor = "#33ff33";
+		
+		// 文字大小
+		var fontSize = 16;
+		
+		// 列数（宽度除以字符宽度）
+		var clumns = parseInt( stageWidth / fontSize, 10 );
+		
+		// 存储每列的起始位置（随机设置）
+		var drops = [];
+		var i, len = clumns;
+		for ( i = 0; i < len; i++ )
+		{
+			drops[ i ] = Math.floor( Math.random() * stageHeight );
+		}
+		
+		// 每次循环加0.1透明的蒙层
+		var clearColor = "rgba(0, 0, 0, 0.1)";
+		
+		// 字体下落速度
+		var speed = 150; 
+		var speedTime = 0;
+		
+		// 帧频事件索引值，用于停止帧频事件
+		var rafIndex = -1;
+		
+		
+		rafIndex = window.requestAnimationFrame( drawFrame );
+		
+		// 绘制
+		function draw ()
+		{
+			// 设置字体颜色和字符大小
+			ctx.fillStyle = wordColor;
+			ctx.font = fontSize + "px arial";
+			
+			// 填充字符
+			var i, len = drops.length;
+			for ( i = 0; i < len; i++ )
+			{
+				var text = wordsArr[ Math.floor( Math.random() * wordsArr.length ) ];
+				ctx.fillText( text, i * fontSize, drops[i] * fontSize );
+				
+				// 0.95的随机数造成列消失的时间不一致，产生的列也随之改变
+				if ( drops[i] * fontSize > stageHeight && Math.random() > 0.95 )
+				{
+					drops[i] = 0;
+				}
+				drops[i]++;
+			}
+			ctx.restore();
+		}
+		
+		// 帧频绘制
+		function drawFrame ( time )
+		{
+			// 当时间大于设定的下落速度，才会进行绘制
+			if ( time - speedTime > speed )
+			{
+				speedTime = time;
+				
+				ctx.fillStyle = clearColor;
+				ctx.fillRect( 0, 0, stageWidth, stageHeight );
+				draw();
+			}
+			rafIndex = window.requestAnimationFrame( drawFrame );
+		}
+		
+	</script>
+</body>
+</html>

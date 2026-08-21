@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!-- 
+	Usage:
+
+	To localize the description, use the following format for the description element.
+	<description>
+	<text xml:lang="en">English App description goes here</text>
+	<text xml:lang="fr">French App description goes here</text>
+	<text xml:lang="ja">Japanese App description goes here</text>
+	</description>
+
+	To localize the name, use the following format for the name element.
+	<name>
+	<text xml:lang="en">English App name goes here</text>
+	<text xml:lang="fr">French App name goes here</text>
+	<text xml:lang="ja">Japanese App name goes here</text>
+	</name>
+-->
+<application xmlns="http://ns.adobe.com/air/application/51.2">
+  <id>StageWebViewAndroid</id>
+  <versionNumber>1.0.0</versionNumber>
+  <filename>StageWebViewAndroid</filename>
+  <description/>
+  <name>StageWebViewAndroid</name>
+  <copyright/>
+  <initialWindow>
+    <content>StageWebViewAndroid.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <fullScreen>true</fullScreen>
+    <aspectRatio>landscape</aspectRatio>
+    <renderMode>direct</renderMode>
+  
+  
+  <!-- 添加 DPI 设置，禁止系统对AIR软件进行缩放，需要在AIR程序中添加自适应设置代码 -->
+    <requestedDisplayResolution>high</requestedDisplayResolution>
+    <autoOrients>true</autoOrients>
+  </initialWindow>
+  
+  
+
+  <!-- windows系统上的AIR程序调用系统现代浏览器 -->
+  <windows>
+    <UseWebView2>true</UseWebView2>
+  </windows>
+  <icon>
+    <image36x36>AppIconsForPublish/36.png</image36x36>
+    <image48x48>AppIconsForPublish/48.png</image48x48>
+    <image72x72>AppIconsForPublish/72.png</image72x72>
+    <image96x96>AppIconsForPublish/96.png</image96x96>
+    <image144x144>AppIconsForPublish/144.png</image144x144>
+    <image192x192>AppIconsForPublish/192.png</image192x192>
+  </icon>
+  <customUpdateUI>false</customUpdateUI>
+  <allowBrowserInvocation>false</allowBrowserInvocation>
+  <android>
+	
+  
+  
+  <!-- 允许访问网络：<uses-permission android:name="android.permission.INTERNET"/> 这是很基础的配置 -->
+  
+  
+  <!-- 开启安卓系统硬件加速：<application android:hardwareAccelerated="true"/> 网页中如果有视频，配置才可以播放视频 -->
+  
+  
+  <!-- 给AIR应用分配更大内存：<application android:usesCleartextTraffic="true"/> 避免网页加载时内存不足 -->
+  
+  
+  <!-- 允许加载HTTP网址(非HTTPS)：<application android:largeHeap="true"/> ·安卓9以 必认须加 -->
+    <manifestAdditions><![CDATA[<manifest>
+<uses-permission android:name="android.permission.INTERNET"/>
+<application android:hardwareAccelerated="true" 
+			android:usesCleartextTraffic="true" 
+            android:largeHeap="true"
+        />
+</manifest>]]></manifestAdditions>
+  </android>
+  <supportedLanguages>en zh</supportedLanguages>
+  <versionLabel/>
+</application>

@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="TKCB-Nm（TKCB乐队队长）">
+
+	<title>读取JSON文件（本地JS读取JSON在谷歌等浏览器不被支持，除非使用调试模式或本地服务器打开）</title>
+
+	<style rel="stylesheet" type="text/css">
+		/* 公共CSS和本练习无关 */
+		body {
+			background-color: #FFFFFF;
+		}
+
+		.hs {
+			color: #999999;
+		}
+
+		.fl {
+			float: left;
+		}
+
+		.fr {
+			float: right;
+		}
+
+		.rs {
+			color: #FF0000;
+		}
+
+		.bs {
+			color: #0000FF;
+		}
+
+
+		/* 练习的CSS样式 */
+		/*#tf1 {
+			width: 200px;
+		}*/
+	</style>
+
+	<script src="js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+	<a class="hs fr" href="" target="_blank">Author：TKCB-Nm（TKCB乐队队长）</a>
+	<p class="hs fl">此练习参考：无</p>
+	<br>
+	<br>
+	<h2 class="ts">读取JSON文件（本地JS读取JSON在谷歌等浏览器不被支持，除非使用调试模式或本地服务器打开）</h2>
+
+	
+	<p class="">JSON的数据结构支持对象（花括号）、数组（方括号）任意嵌套使用</p>
+	<p class="">JSON的数据值的类型有4种：字符串（单双引号）、数字（整数和浮点数）、布尔值（true和false）、null（空值）</p>
+	<p class="">JOSN和XML都是跨平台的数据描述的结构，大部分时候可以相互转换，少部分时候各自有自己领域的不可替代的性质</p>
+	<p class="">（所以使用时候不比很纠结于使用哪个，除非有很严格的要求和深远的打算）</p>
+
+	<br>
+
+	<br>
+	<div id="" class="">如果你能看到下面的JSON字符串，说明加载成功了。</div>
+	<div id="stage" class=""></div>
+	<br>
+
+	<br>
+	<p class="rs">提示：无</p>
+
+
+	<script>
+		// 文档初始化
+		$( document ).ready( init );
+		function init ()
+		{
+			// 传统的加载数据的方式，由于浏览器的政策限制，导致无法在本地使用（除非使用调试模式）
+			$.ajax(
+			{
+				url : "data/countries.json",
+				type : "GET",
+				dataType : "json",
+				success : function(data)
+				{
+					$( "#stage" ).text( JSON.stringify(data) );
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>
